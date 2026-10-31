@@ -1,0 +1,1308 @@
+<!DOCTYPE html>
+<html lang="ka" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>მარელიანი • Mareli Sweets | ტკბილეულის ონლაინ მაღაზია & აწყობა</title>
+  <meta name="description" content="მარელიანის ტკბილეულის ონლაინ მაღაზია. ააწყვე შენი საოცნებო ტორტი, ორცხობილა ან ნამცხვარი, აირჩიე შიგთავსი და დიზაინი, მიუთითე მისამართი და მიიღე უსწრაფესად.">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              blue: '#0F2042',
+              blueHover: '#1E3A8A',
+              blueLight: '#EFF6FF',
+              blueAccent: '#2563EB',
+              brown: '#3E2723',
+              brownWarm: '#5D4037',
+              brownCaramel: '#8D6E63',
+              brownCream: '#FAF5EF',
+              white: '#FFFFFF',
+              cream: '#FAF8F5'
+            }
+          },
+          fontFamily: {
+            georgian: ['"Noto Sans Georgian"', 'sans-serif'],
+            serif: ['"Playfair Display"', 'Georgia', 'serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Georgian:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="bg-brand-cream text-slate-800 font-georgian antialiased selection:bg-brand-blue selection:text-white">
+
+  <!-- ========================================================================= -->
+  <!-- 1. HEADER & NAVIGATION (DESKTOP + MOBILE BURGER)                         -->
+  <!-- ========================================================================= -->
+  <header class="sticky top-0 z-50 glass-header transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        
+        <!-- Logo -->
+        <a href="#home" class="flex items-center gap-3 group focus:outline-none focus:ring-2 focus:ring-brand-blue rounded-xl p-1">
+          <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-brand-blue to-brand-brown text-white flex items-center justify-center shadow-lg shadow-brand-blue/20 group-hover:scale-105 transition-transform duration-300">
+            <span class="text-2xl">🍰</span>
+          </div>
+          <div>
+            <span class="text-2xl font-black tracking-tight text-brand-blue block leading-none">მარელიანი</span>
+            <span class="text-[11px] font-semibold uppercase tracking-wider text-brand-brownCaramel block mt-1">Confectionery Atelier</span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <nav class="hidden lg:flex items-center space-x-1 xl:space-x-2">
+          <a href="#home" class="px-3 py-2 text-sm font-semibold text-slate-700 hover:text-brand-blue hover:bg-brand-blueLight/80 rounded-xl transition-all">მთავარი</a>
+          <a href="#about" class="px-3 py-2 text-sm font-semibold text-slate-700 hover:text-brand-blue hover:bg-brand-blueLight/80 rounded-xl transition-all">ჩვენს შესახებ</a>
+          <a href="#sweet-types" class="px-3 py-2 text-sm font-semibold text-slate-700 hover:text-brand-blue hover:bg-brand-blueLight/80 rounded-xl transition-all">შიგთავსის არჩევა</a>
+          <a href="#customizer" class="px-3 py-2 text-sm font-semibold text-slate-700 hover:text-brand-blue hover:bg-brand-blueLight/80 rounded-xl transition-all">დიზაინის აწყობა</a>
+          <a href="#order-section" class="px-3 py-2 text-sm font-semibold text-slate-700 hover:text-brand-blue hover:bg-brand-blueLight/80 rounded-xl transition-all">შეკვეთა & მიწოდება</a>
+        </nav>
+
+        <!-- Right Quick Info & CTA -->
+        <div class="hidden sm:flex items-center gap-4">
+          <a href="tel:+995322123456" class="hidden xl:flex items-center gap-2 text-xs font-bold text-slate-600 bg-white/80 border border-slate-200 px-3 py-2 rounded-xl hover:border-brand-blue transition-all">
+            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span>
+            <span>+995 32 2 123 456</span>
+          </a>
+          <a href="#customizer" class="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-brand-blue to-brand-blueHover text-white text-sm font-bold rounded-xl shadow-lg shadow-brand-blue/25 hover:shadow-brand-blue/40 hover:-translate-y-0.5 active:translate-y-0 transition-all">
+            <span>✨ ააწყვე ტკბილეული</span>
+          </a>
+        </div>
+
+        <!-- Mobile Burger Menu Button (Visible on Small Screens) -->
+        <div class="flex items-center gap-2 lg:hidden">
+          <a href="#order-section" class="p-2 text-brand-blue bg-white rounded-xl shadow-sm border border-slate-200 sm:hidden" aria-label="შეკვეთა">
+            <span class="text-lg">🛒</span>
+          </a>
+          <button id="burger-btn" 
+                  type="button" 
+                  aria-label="მენიუს გახსნა" 
+                  aria-expanded="false" 
+                  class="p-3 rounded-2xl bg-white/90 border border-slate-200 shadow-md text-brand-blue focus:outline-none focus:ring-2 focus:ring-brand-blue">
+            <div class="burger-icon w-6 h-5 flex flex-col justify-between">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  <!-- ========================================================================= -->
+  <!-- 2. MOBILE BURGER DRAWER MENU (RESPONSIVE SLIDE-OVER)                     -->
+  <!-- ========================================================================= -->
+  <div id="mobile-menu" class="fixed inset-0 z-50 hidden" role="dialog" aria-modal="true">
+    <!-- Dark Backdrop -->
+    <div id="mobile-backdrop" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm opacity-0 transition-opacity duration-300"></div>
+
+    <!-- Drawer Content -->
+    <div id="mobile-drawer" class="fixed inset-y-0 right-0 max-w-sm w-full bg-white shadow-2xl flex flex-col transform translate-x-full transition-transform duration-300 ease-in-out border-l border-slate-100">
+      
+      <!-- Drawer Header -->
+      <div class="p-6 border-b border-slate-100 flex items-center justify-between bg-gradient-to-r from-brand-brownCream to-white">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-brand-blue text-white flex items-center justify-center font-bold text-lg shadow-md">
+            🍰
+          </div>
+          <div>
+            <h2 class="font-black text-brand-blue text-lg leading-tight">მარელიანი</h2>
+            <p class="text-xs text-brand-brownCaramel font-medium">ტკბილეულის მენიუ</p>
+          </div>
+        </div>
+        <button id="close-menu-btn" type="button" class="p-2 text-slate-400 hover:text-slate-700 rounded-xl hover:bg-slate-100 transition-colors" aria-label="მენიუს დახურვა">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Drawer Navigation Links -->
+      <div class="flex-1 overflow-y-auto p-6 space-y-3">
+        <p class="text-xs uppercase font-extrabold text-slate-400 tracking-wider mb-2">გვერდები და სექციები</p>
+        
+        <a href="#home" class="mobile-nav-link flex items-center gap-4 p-3.5 rounded-2xl hover:bg-brand-blueLight text-slate-800 font-bold hover:text-brand-blue transition-all">
+          <span class="w-10 h-10 rounded-xl bg-blue-100 text-brand-blue flex items-center justify-center text-lg">🏠</span>
+          <div>
+            <span class="block text-base">მთავარი</span>
+            <span class="block text-xs font-normal text-slate-500">პორტფოლიო და შემოთავაზებები</span>
+          </div>
+        </a>
+
+        <a href="#about" class="mobile-nav-link flex items-center gap-4 p-3.5 rounded-2xl hover:bg-brand-blueLight text-slate-800 font-bold hover:text-brand-blue transition-all">
+          <span class="w-10 h-10 rounded-xl bg-amber-100 text-brand-brown flex items-center justify-center text-lg">📖</span>
+          <div>
+            <span class="block text-base">ჩვენს შესახებ</span>
+            <span class="block text-xs font-normal text-slate-500">ისტორია & ნატურალური ხარისხი</span>
+          </div>
+        </a>
+
+        <a href="#sweet-types" class="mobile-nav-link flex items-center gap-4 p-3.5 rounded-2xl hover:bg-brand-blueLight text-slate-800 font-bold hover:text-brand-blue transition-all">
+          <span class="w-10 h-10 rounded-xl bg-purple-100 text-purple-700 flex items-center justify-center text-lg">🍰</span>
+          <div>
+            <span class="block text-base">ტკბილეულის შიგთავსის არჩევა</span>
+            <span class="block text-xs font-normal text-slate-500">ტორტი, ორცხობილა თუ ნამცხვარი</span>
+          </div>
+        </a>
+
+        <a href="#customizer" class="mobile-nav-link flex items-center gap-4 p-3.5 rounded-2xl hover:bg-brand-blueLight text-slate-800 font-bold hover:text-brand-blue transition-all">
+          <span class="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center text-lg">🎨</span>
+          <div>
+            <span class="block text-base">ტკბილეულის დიზაინის აწყობა</span>
+            <span class="block text-xs font-normal text-slate-500">ინტერაქტიული ვიზუალური აწყობა</span>
+          </div>
+        </a>
+
+        <a href="#order-section" class="mobile-nav-link flex items-center gap-4 p-3.5 rounded-2xl hover:bg-brand-blueLight text-slate-800 font-bold hover:text-brand-blue transition-all">
+          <span class="w-10 h-10 rounded-xl bg-rose-100 text-rose-700 flex items-center justify-center text-lg">🚚</span>
+          <div>
+            <span class="block text-base">მისამართი & შეკვეთა</span>
+            <span class="block text-xs font-normal text-slate-500">მიუთითეთ ტელეფონი და მისამართი</span>
+          </div>
+        </a>
+
+        <!-- Extra Info in Burger Drawer -->
+        <div class="mt-8 pt-6 border-t border-slate-100 bg-brand-brownCream/60 -mx-6 px-6 pb-4">
+          <p class="text-xs font-bold text-brand-brown mb-2">სწრაფი კონტაქტი:</p>
+          <a href="tel:+995599001122" class="flex items-center gap-3 text-sm font-extrabold text-brand-blue mb-2">
+            <span>📞</span>
+            <span>+995 599 00 11 22</span>
+          </a>
+          <p class="text-xs text-slate-500">მიწოდება თბილისში, ბათუმსა და ქუთაისში 45-60 წუთში.</p>
+        </div>
+      </div>
+
+      <!-- Drawer Footer CTA -->
+      <div class="p-6 border-t border-slate-100 bg-white">
+        <a href="#customizer" class="mobile-nav-link w-full py-3.5 px-4 bg-gradient-to-r from-brand-blue to-brand-brown text-white font-bold text-center rounded-2xl block shadow-lg shadow-brand-blue/20">
+          ✨ ტკბილეულის აწყობა
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ========================================================================= -->
+  <!-- 3. HERO SECTION (მთავარი)                                                 -->
+  <!-- ========================================================================= -->
+  <section id="home" class="relative pt-8 pb-16 lg:py-24 overflow-hidden">
+    <!-- Decorative background blobs -->
+    <div class="absolute -top-32 -left-32 w-96 h-96 bg-blue-200/50 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute top-1/2 -right-32 w-96 h-96 bg-amber-200/40 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Left Hero Text -->
+        <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+          
+          <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-brand-blue/15 shadow-sm text-xs sm:text-sm font-bold text-brand-blue">
+            <span class="w-2.5 h-2.5 rounded-full bg-brand-blue animate-pulse"></span>
+            <span>ხელნაკეთი ტკბილეულის ონლაინ ატელიე</span>
+          </div>
+
+          <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black text-brand-blue leading-[1.15] tracking-tight">
+            შექმენი შენი საოცნებო <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-blue via-brand-blueAccent to-brand-brown">ტკბილეული</span> საკუთარი დიზაინით
+          </h1>
+
+          <p class="mobile-readable-text text-base sm:text-lg text-slate-600 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+            აირჩიეთ <strong class="text-brand-brown">ტორტი</strong>, <strong class="text-brand-brown">ორცხობილა</strong> თუ <strong class="text-brand-brown">ნამცხვარი</strong>. შეარჩიეთ საავტორო შიგთავსი, ფერი, დეკორაცია და პირადი წარწერა. ჩვენ მას ახლად გამოვაცხობთ და მოგართმევთ მითითებულ მისამართზე.
+          </p>
+
+          <!-- Action Buttons -->
+          <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+            <a href="#customizer" class="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-brand-blue to-brand-blueHover text-white font-black text-base rounded-2xl shadow-xl shadow-brand-blue/30 hover:shadow-brand-blue/50 hover:-translate-y-0.5 transition-all text-center">
+              🎨 დაიწყე აწყობა ახლავე
+            </a>
+            <a href="#about" class="w-full sm:w-auto px-7 py-4 bg-white hover:bg-slate-50 text-brand-brown font-bold text-base rounded-2xl border border-slate-200 shadow-sm transition-all text-center">
+              📖 ჩვენს შესახებ
+            </a>
+          </div>
+
+          <!-- Feature badges -->
+          <div class="grid grid-cols-3 gap-3 pt-6 border-t border-slate-200/80 max-w-lg mx-auto lg:mx-0">
+            <div class="text-center lg:text-left">
+              <span class="block text-xl sm:text-2xl font-black text-brand-blue">100%</span>
+              <span class="text-xs text-slate-500 font-medium">ნატურალური პროდუქტი</span>
+            </div>
+            <div class="text-center lg:text-left">
+              <span class="block text-xl sm:text-2xl font-black text-brand-brown">45 წთ</span>
+              <span class="text-xs text-slate-500 font-medium">სწრაფი მიწოდება</span>
+            </div>
+            <div class="text-center lg:text-left">
+              <span class="block text-xl sm:text-2xl font-black text-brand-blueAccent">5,000+</span>
+              <span class="text-xs text-slate-500 font-medium">ბედნიერი შეკვეთა</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right Hero Visual Card -->
+        <div class="lg:col-span-5 relative">
+          <div class="relative mx-auto max-w-md lg:max-w-none">
+            
+            <!-- Glow background -->
+            <div class="absolute -inset-3 bg-gradient-to-r from-brand-blue to-brand-brown rounded-3xl blur-2xl opacity-20 transform -rotate-1"></div>
+            
+            <!-- Main Hero Image Box -->
+            <div class="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-white group">
+              <img src="assets/images/hero-cake.jpg" 
+                   alt="მარელიანის საზეიმო ტორტი" 
+                   class="w-full h-[380px] sm:h-[440px] object-cover group-hover:scale-105 transition-transform duration-700">
+              
+              <!-- Floating Overlay Badge 1 -->
+              <div class="absolute top-4 left-4 glass-card px-4 py-2.5 rounded-2xl flex items-center gap-2.5 shadow-lg">
+                <span class="text-xl">🍫</span>
+                <div>
+                  <span class="block text-xs font-bold text-brand-blue leading-none">ბელგიური შოკოლადი</span>
+                  <span class="text-[10px] text-slate-500 font-medium">70% მუქი განაში</span>
+                </div>
+              </div>
+
+              <!-- Floating Overlay Badge 2 -->
+              <div class="absolute bottom-4 right-4 glass-card px-4 py-2.5 rounded-2xl flex items-center gap-2.5 shadow-lg">
+                <span class="text-xl">👑</span>
+                <div>
+                  <span class="block text-xs font-bold text-brand-brown leading-none">ხელნაკეთი დიზაინი</span>
+                  <span class="text-[10px] text-emerald-600 font-bold">მორგებული თქვენს სურვილზე</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- 4. ABOUT US SECTION (ჩვენს შესახებ)                                       -->
+  <!-- ========================================================================= -->
+  <section id="about" class="py-16 sm:py-24 bg-white border-y border-slate-200/80 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+        <span class="text-xs sm:text-sm font-extrabold uppercase tracking-widest text-brand-brownCaramel bg-brand-brownCream px-4 py-1.5 rounded-full inline-block">
+          ჩვენი ისტორია & ოსტატობა
+        </span>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-brand-blue">
+          ჩვენს შესახებ
+        </h2>
+        <div class="w-16 h-1 bg-gradient-to-r from-brand-blue to-brand-brown rounded-full mx-auto"></div>
+        <p class="mobile-readable-text text-base sm:text-lg text-slate-600 leading-relaxed pt-2">
+          „მარელიანი“ დაარსდა ერთი მთავარი მიზნით — ტკბილეულის შექმნა ხელოვნების დონემდე აგვეყვანა, სადაც მომხმარებელი თავად ხდება დიზაინერი.
+        </p>
+      </div>
+
+      <!-- About Story Grid -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+        
+        <!-- Story Images Double Grid -->
+        <div class="lg:col-span-6 grid grid-cols-2 gap-4">
+          <div class="space-y-4">
+            <div class="rounded-3xl overflow-hidden shadow-lg border-2 border-white">
+              <img src="assets/images/artisan-chef.jpg" alt="ჩვენი შეფ-კონდიტერი" class="w-full h-56 sm:h-64 object-cover hover:scale-105 transition-transform duration-500">
+            </div>
+            <div class="bg-brand-blue text-white p-6 rounded-3xl shadow-lg">
+              <span class="text-3xl font-black block mb-1">100%</span>
+              <p class="text-xs sm:text-sm text-blue-100 font-medium leading-relaxed">
+                ნატურალური ნაღების კარაქი და ბელგიური შოკოლადი, ყოველგვარი ხელოვნური დანამატების გარეშე.
+              </p>
+            </div>
+          </div>
+
+          <div class="space-y-4 pt-6">
+            <div class="bg-gradient-to-br from-brand-brown to-brand-brownWarm text-white p-6 rounded-3xl shadow-lg">
+              <span class="text-2xl font-black block mb-1">ხელნაკეთი</span>
+              <p class="text-xs sm:text-sm text-amber-100 font-medium leading-relaxed">
+                თითოეული ნამცხვარი, ორცხობილა და ტორტი იქმნება ინდივიდუალურად თქვენი შეკვეთის შემდეგ.
+              </p>
+            </div>
+            <div class="rounded-3xl overflow-hidden shadow-lg border-2 border-white">
+              <img src="assets/images/sweets-assortment.jpg" alt="ტკბილეულის ასორტიმენტი" class="w-full h-56 sm:h-64 object-cover hover:scale-105 transition-transform duration-500">
+            </div>
+          </div>
+        </div>
+
+        <!-- Story Details & Pillars -->
+        <div class="lg:col-span-6 space-y-6">
+          <h3 class="text-2xl sm:text-3xl font-extrabold text-brand-blue leading-snug">
+            რატომ ირჩევენ მარელიანის ტკბილეულს?
+          </h3>
+
+          <p class="mobile-readable-text text-slate-600 leading-relaxed">
+            ჩვენს სახელოსნოში თითოეული დესერტი განსაკუთრებული სიყვარულითა და სიზუსტით იქმნება. ჩვენ არ გვაქვს წინასწარ გამომცხვარი, გაყინული ბისკვიტები — ყველაფერი მზადდება მხოლოდ მას შემდეგ, რაც თქვენ საიტზე ააწყობთ თქვენს სასურველ დიზაინსა და შიგთავსს.
+          </p>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+            
+            <div class="p-4 rounded-2xl bg-brand-cream border border-slate-200/80 hover:border-brand-blue/30 transition-all">
+              <div class="w-10 h-10 rounded-xl bg-blue-100 text-brand-blue flex items-center justify-center font-bold text-lg mb-3">
+                🫐
+              </div>
+              <h4 class="font-bold text-brand-blue text-base mb-1">ახალი ხილი & კენკრა</h4>
+              <p class="text-xs text-slate-500 leading-relaxed">
+                ვიყენებთ მხოლოდ ცოცხალ ჟოლოს, მარწყვს და ტყის კენკრას ქართული ფერმებიდან.
+              </p>
+            </div>
+
+            <div class="p-4 rounded-2xl bg-brand-cream border border-slate-200/80 hover:border-brand-brown/30 transition-all">
+              <div class="w-10 h-10 rounded-xl bg-amber-100 text-brand-brown flex items-center justify-center font-bold text-lg mb-3">
+                🧁
+              </div>
+              <h4 class="font-bold text-brand-brown text-base mb-1">სრული კონტროლი</h4>
+              <p class="text-xs text-slate-500 leading-relaxed">
+                თქვენ თავად წყვეტთ ტორტი იქნება, ორცხობილა თუ ნამცხვარი, ასევე ფერსა და წარწერას.
+              </p>
+            </div>
+
+            <div class="p-4 rounded-2xl bg-brand-cream border border-slate-200/80 hover:border-brand-blue/30 transition-all">
+              <div class="w-10 h-10 rounded-xl bg-blue-100 text-brand-blue flex items-center justify-center font-bold text-lg mb-3">
+                🛵
+              </div>
+              <h4 class="font-bold text-brand-blue text-base mb-1">თერმო-მიწოდება</h4>
+              <p class="text-xs text-slate-500 leading-relaxed">
+                სპეციალური მაცივარი ყუთებით მიწოდება, რათა დიზაინი დარჩეს იდეალური.
+              </p>
+            </div>
+
+            <div class="p-4 rounded-2xl bg-brand-cream border border-slate-200/80 hover:border-brand-brown/30 transition-all">
+              <div class="w-10 h-10 rounded-xl bg-amber-100 text-brand-brown flex items-center justify-center font-bold text-lg mb-3">
+                🏷️
+              </div>
+              <h4 class="font-bold text-brand-brown text-base mb-1">გამჭვირვალე ფასი</h4>
+              <p class="text-xs text-slate-500 leading-relaxed">
+                ფასი ითვლება პირდაპირ ეთერში, ყოველგვარი ფარული დანამატების გარეშე.
+              </p>
+            </div>
+
+          </div>
+
+          <div class="pt-2">
+            <a href="#sweet-types" class="inline-flex items-center gap-2 text-sm font-bold text-brand-blue hover:text-brand-blueAccent underline underline-offset-4">
+              <span>გადასვლა ტკბილეულის სახეობისა და შიგთავსის არჩევაზე</span>
+              <span>→</span>
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- 5. SWEET TYPE & FILLING SELECTION (შიგთავსის არჩევა)                     -->
+  <!-- ========================================================================= -->
+  <section id="sweet-types" class="py-16 sm:py-24 bg-brand-cream relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+        <span class="text-xs sm:text-sm font-extrabold uppercase tracking-widest text-brand-blue bg-white border border-brand-blue/20 px-4 py-1.5 rounded-full inline-block">
+          ეტაპი 1 & 2
+        </span>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-brand-blue">
+          ტკბილეულის ტიპი და შიგთავსის არჩევა
+        </h2>
+        <div class="w-16 h-1 bg-gradient-to-r from-brand-blue to-brand-brown rounded-full mx-auto"></div>
+        <p class="mobile-readable-text text-base sm:text-lg text-slate-600 leading-relaxed pt-2">
+          პირველ რიგში გადაწყვიტეთ, რა სახის ტკბილეული გსურთ — <strong class="text-brand-blue">ტორტი</strong>, <strong class="text-brand-brown">ორცხობილა</strong> თუ <strong class="text-brand-blue">ნამცხვარი</strong>. შემდეგ შეარჩიეთ საყვარელი ბისკვიტი და შიგთავსი.
+        </p>
+      </div>
+
+      <!-- STEP 1: CHOOSE SWEET TYPE (ტორტი, ორცხობილა, ნამცხვარი) -->
+      <div class="mb-14">
+        <div class="flex items-center gap-3 mb-6">
+          <span class="w-8 h-8 rounded-full bg-brand-blue text-white font-black text-sm flex items-center justify-center">1</span>
+          <h3 class="text-xl sm:text-2xl font-black text-brand-blue">აირჩიეთ ტკბილეულის სახეობა:</h3>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+          
+          <!-- TYPE 1: ტორტი -->
+          <div data-type="cake" class="sweet-type-card cursor-pointer relative p-6 rounded-3xl bg-white border-2 border-blue-600 bg-blue-50/60 ring-2 ring-blue-500 shadow-md hover:shadow-xl transition-all duration-300">
+            <div class="check-indicator absolute top-4 right-4 w-7 h-7 rounded-full bg-blue-600 text-white flex items-center justify-center text-sm font-bold shadow">
+              ✓
+            </div>
+            <div class="w-16 h-16 rounded-2xl bg-blue-100 text-brand-blue flex items-center justify-center text-3xl mb-4 shadow-inner">
+              🎂
+            </div>
+            <h4 class="text-xl font-black text-brand-blue mb-1">ტორტი</h4>
+            <p class="text-xs text-brand-brownCaramel font-bold mb-3">სადღესასწაულო & ბენტო ტორტი</p>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-4">
+              მრავალფენიანი საზეიმო ტორტი 1, 2 ან 3 იარუსით. იდეალურია დაბადების დღისთვის, ქორწილისთვის და დღესასწაულებისთვის.
+            </p>
+            <div class="pt-3 border-t border-slate-200/80 flex items-center justify-between">
+              <span class="text-xs text-slate-500 font-medium">საწყისი ფასი:</span>
+              <span class="text-base font-black text-brand-blue">65 ₾-დან</span>
+            </div>
+          </div>
+
+          <!-- TYPE 2: ორცხობილა -->
+          <div data-type="cookie" class="sweet-type-card cursor-pointer relative p-6 rounded-3xl bg-white border-2 border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300">
+            <div class="check-indicator hidden absolute top-4 right-4 w-7 h-7 rounded-full bg-blue-600 text-white flex items-center justify-center text-sm font-bold shadow">
+              ✓
+            </div>
+            <div class="w-16 h-16 rounded-2xl bg-amber-100 text-brand-brown flex items-center justify-center text-3xl mb-4 shadow-inner">
+              🍪
+            </div>
+            <h4 class="text-xl font-black text-brand-blue mb-1">ორცხობილა</h4>
+            <p class="text-xs text-brand-brownCaramel font-bold mb-3">ხელნაკეთი ორცხობილების ნაკრები</p>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-4">
+              ნიუ-იორკული რბილი ორცხობილები, ფრანგული მაკარონები და ხრაშუნა კარაქიანი ნამცხვრები პრემიუმ სასაჩუქრე ყუთში.
+            </p>
+            <div class="pt-3 border-t border-slate-200/80 flex items-center justify-between">
+              <span class="text-xs text-slate-500 font-medium">საწყისი ფასი:</span>
+              <span class="text-base font-black text-brand-blue">35 ₾-დან</span>
+            </div>
+          </div>
+
+          <!-- TYPE 3: ნამცხვარი -->
+          <div data-type="pastry" class="sweet-type-card cursor-pointer relative p-6 rounded-3xl bg-white border-2 border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300">
+            <div class="check-indicator hidden absolute top-4 right-4 w-7 h-7 rounded-full bg-blue-600 text-white flex items-center justify-center text-sm font-bold shadow">
+              ✓
+            </div>
+            <div class="w-16 h-16 rounded-2xl bg-purple-100 text-purple-700 flex items-center justify-center text-3xl mb-4 shadow-inner">
+              🧁
+            </div>
+            <h4 class="text-xl font-black text-brand-blue mb-1">ნამცხვარი</h4>
+            <p class="text-xs text-brand-brownCaramel font-bold mb-3">ფრანგული ნამცხვრები & ტარტები</p>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-4">
+              ინდივიდუალური მინი დესერტები: ეკლერები, ხილის ტარტალეტკები და ჰაეროვანი კექსები მდიდარი კრემით.
+            </p>
+            <div class="pt-3 border-t border-slate-200/80 flex items-center justify-between">
+              <span class="text-xs text-slate-500 font-medium">საწყისი ფასი:</span>
+              <span class="text-base font-black text-brand-blue">24 ₾-დან</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- STEP 2: CHOOSE BASE / SPONGE -->
+      <div class="mb-14">
+        <div class="flex items-center gap-3 mb-6">
+          <span class="w-8 h-8 rounded-full bg-brand-brown text-white font-black text-sm flex items-center justify-center">2</span>
+          <h3 class="text-xl sm:text-2xl font-black text-brand-blue">აირჩიეთ ბისკვიტის ან ცომის ტიპი:</h3>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          
+          <div data-base="vanilla" class="sweet-base-card cursor-pointer p-4 rounded-2xl bg-white border-2 border-amber-700 bg-amber-50/70 ring-2 ring-amber-600 shadow-sm hover:shadow-md transition-all">
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-2xl">🌾</span>
+              <span class="text-xs font-bold text-emerald-600">კლასიკური</span>
+            </div>
+            <h4 class="font-bold text-brand-blue text-sm">ვანილის ბისკვიტი</h4>
+            <p class="text-xs text-slate-500 mt-1">ჰაეროვანი და ნაზი კლასიკა</p>
+          </div>
+
+          <div data-base="chocolate" class="sweet-base-card cursor-pointer p-4 rounded-2xl bg-white border-2 border-slate-200 shadow-sm hover:shadow-md transition-all">
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-2xl">🍫</span>
+              <span class="text-xs font-bold text-brand-brown">+5 ₾</span>
+            </div>
+            <h4 class="font-bold text-brand-blue text-sm">შოკოლადის ფაჯი</h4>
+            <p class="text-xs text-slate-500 mt-1">მდიდარი ბრაუნის სტრუქტურა</p>
+          </div>
+
+          <div data-base="red_velvet" class="sweet-base-card cursor-pointer p-4 rounded-2xl bg-white border-2 border-slate-200 shadow-sm hover:shadow-md transition-all">
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-2xl">🌹</span>
+              <span class="text-xs font-bold text-brand-brown">+7 ₾</span>
+            </div>
+            <h4 class="font-bold text-brand-blue text-sm">წითელი ხავერდი</h4>
+            <p class="text-xs text-slate-500 mt-1">ხავერდოვანი Red Velvet</p>
+          </div>
+
+          <div data-base="honey" class="sweet-base-card cursor-pointer p-4 rounded-2xl bg-white border-2 border-slate-200 shadow-sm hover:shadow-md transition-all">
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-2xl">🍯</span>
+              <span class="text-xs font-bold text-brand-brown">+6 ₾</span>
+            </div>
+            <h4 class="font-bold text-brand-blue text-sm">თაფლი და ნიგოზი</h4>
+            <p class="text-xs text-slate-500 mt-1">მთის თაფლის თხელი ფენები</p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- STEP 3: CHOOSE FILLING (შიგთავსის არჩევა) -->
+      <div>
+        <div class="flex items-center gap-3 mb-6">
+          <span class="w-8 h-8 rounded-full bg-brand-blue text-white font-black text-sm flex items-center justify-center">3</span>
+          <h3 class="text-xl sm:text-2xl font-black text-brand-blue">აირჩიეთ ტკბილეულის შიგთავსი:</h3>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          
+          <!-- Filling 1 -->
+          <div data-filling="chocolate_ganache" class="sweet-filling-card cursor-pointer p-5 rounded-2xl bg-white border-2 border-blue-600 bg-blue-50/70 ring-2 ring-blue-500 shadow-md hover:shadow-lg transition-all">
+            <div class="flex items-start justify-between">
+              <div class="w-12 h-12 rounded-xl bg-amber-950 text-white flex items-center justify-center text-2xl shadow">
+                🍫
+              </div>
+              <span class="px-2.5 py-1 rounded-full text-xs font-bold bg-blue-100 text-brand-blue">+8 ₾</span>
+            </div>
+            <h4 class="text-base font-black text-brand-blue mt-3">ბელგიური შოკოლადის განაში</h4>
+            <p class="text-xs text-slate-600 mt-1 leading-relaxed">
+              70% ნამდვილი ბელგიური მუქი შოკოლადი და ნატურალური ნაღები.
+            </p>
+          </div>
+
+          <!-- Filling 2 -->
+          <div data-filling="vanilla_cream" class="sweet-filling-card cursor-pointer p-5 rounded-2xl bg-white border-2 border-slate-200 shadow-sm hover:shadow-lg transition-all">
+            <div class="flex items-start justify-between">
+              <div class="w-12 h-12 rounded-xl bg-amber-100 text-amber-900 flex items-center justify-center text-2xl shadow">
+                🍦
+              </div>
+              <span class="px-2.5 py-1 rounded-full text-xs font-bold bg-slate-100 text-slate-700">+6 ₾</span>
+            </div>
+            <h4 class="text-base font-black text-brand-blue mt-3">მადაგასკარის ვანილის კრემი</h4>
+            <p class="text-xs text-slate-600 mt-1 leading-relaxed">
+              ნაზი ვანილის ექსტრაქტი და ფრანგული კრემ-ბრიულეს ტექსტურა.
+            </p>
+          </div>
+
+          <!-- Filling 3 -->
+          <div data-filling="forest_berries" class="sweet-filling-card cursor-pointer p-5 rounded-2xl bg-white border-2 border-slate-200 shadow-sm hover:shadow-lg transition-all">
+            <div class="flex items-start justify-between">
+              <div class="w-12 h-12 rounded-xl bg-rose-100 text-rose-700 flex items-center justify-center text-2xl shadow">
+                🍓
+              </div>
+              <span class="px-2.5 py-1 rounded-full text-xs font-bold bg-slate-100 text-slate-700">+9 ₾</span>
+            </div>
+            <h4 class="text-base font-black text-brand-blue mt-3">ტყის კენკრის კული</h4>
+            <p class="text-xs text-slate-600 mt-1 leading-relaxed">
+              ჟოლოსა და მაყვლის მჟავე-ტკბილი ცოცხალი კონფიტიური.
+            </p>
+          </div>
+
+          <!-- Filling 4 -->
+          <div data-filling="salted_caramel" class="sweet-filling-card cursor-pointer p-5 rounded-2xl bg-white border-2 border-slate-200 shadow-sm hover:shadow-lg transition-all">
+            <div class="flex items-start justify-between">
+              <div class="w-12 h-12 rounded-xl bg-amber-200 text-amber-950 flex items-center justify-center text-2xl shadow">
+                🍯
+              </div>
+              <span class="px-2.5 py-1 rounded-full text-xs font-bold bg-slate-100 text-slate-700">+10 ₾</span>
+            </div>
+            <h4 class="text-base font-black text-brand-blue mt-3">კარამელი & მოხალული თხილი</h4>
+            <p class="text-xs text-slate-600 mt-1 leading-relaxed">
+              დამარილებული კარამელი და ხრაშუნა მოხალული თხილეული.
+            </p>
+          </div>
+
+          <!-- Filling 5 -->
+          <div data-filling="pistachio" class="sweet-filling-card cursor-pointer p-5 rounded-2xl bg-white border-2 border-slate-200 shadow-sm hover:shadow-lg transition-all">
+            <div class="flex items-start justify-between">
+              <div class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-800 flex items-center justify-center text-2xl shadow">
+                🌿
+              </div>
+              <span class="px-2.5 py-1 rounded-full text-xs font-bold bg-slate-100 text-slate-700">+12 ₾</span>
+            </div>
+            <h4 class="text-base font-black text-brand-blue mt-3">სიცილიური ფისტის კრემი</h4>
+            <p class="text-xs text-slate-600 mt-1 leading-relaxed">
+              100% ნამდვილი იტალიური ფისტის პასტა და თეთრი შოკოლადი.
+            </p>
+          </div>
+
+          <!-- Filling 6 -->
+          <div data-filling="mango_passion" class="sweet-filling-card cursor-pointer p-5 rounded-2xl bg-white border-2 border-slate-200 shadow-sm hover:shadow-lg transition-all">
+            <div class="flex items-start justify-between">
+              <div class="w-12 h-12 rounded-xl bg-orange-100 text-orange-800 flex items-center justify-center text-2xl shadow">
+                🥭
+              </div>
+              <span class="px-2.5 py-1 rounded-full text-xs font-bold bg-slate-100 text-slate-700">+10 ₾</span>
+            </div>
+            <h4 class="text-base font-black text-brand-blue mt-3">მანგო & მარაკუიას მუსი</h4>
+            <p class="text-xs text-slate-600 mt-1 leading-relaxed">
+              ტროპიკული ეგზოტიკური ხილის მსუბუქი და ჰაეროვანი მუსი.
+            </p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Quick Action link to Customizer -->
+      <div class="mt-12 text-center">
+        <a href="#customizer" class="inline-flex items-center gap-3 px-8 py-4 bg-brand-blue text-white font-bold rounded-2xl shadow-lg hover:bg-brand-blueHover hover:-translate-y-0.5 transition-all">
+          <span>გააგრძელე დიზაინის აწყობაზე</span>
+          <span class="text-xl">🎨</span>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- 6. SWEET DESIGN BUILDER / CUSTOMIZER (დიზაინის აწყობა)                    -->
+  <!-- ========================================================================= -->
+  <section id="customizer" class="py-16 sm:py-24 bg-white border-t border-slate-200/80 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+        <span class="text-xs sm:text-sm font-extrabold uppercase tracking-widest text-emerald-800 bg-emerald-50 border border-emerald-200 px-4 py-1.5 rounded-full inline-block">
+          ეტაპი 3
+        </span>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-brand-blue">
+          ტკბილეულის დიზაინის აწყობა
+        </h2>
+        <div class="w-16 h-1 bg-gradient-to-r from-brand-blue to-brand-brown rounded-full mx-auto"></div>
+        <p class="mobile-readable-text text-base sm:text-lg text-slate-600 leading-relaxed pt-2">
+          აკონტროლეთ ტკბილეულის გარეგნობა, ფერი, იარუსები, დეკორაციები და პირადი წარწერა. ცვლილებები მომენტალურად აისახება ვიზუალურ პრევიუში!
+        </p>
+      </div>
+
+      <!-- Main Customizer Grid -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+        
+        <!-- LEFT: INTERACTIVE LIVE VISUAL PREVIEW (STICKY ON DESKTOP) -->
+        <div class="lg:col-span-5 lg:sticky lg:top-28">
+          <div class="glass-card rounded-3xl p-6 border-2 border-slate-200/80 shadow-2xl relative overflow-hidden bg-gradient-to-b from-white to-brand-cream">
+            
+            <!-- Live Preview Top Bar -->
+            <div class="flex items-center justify-between pb-4 border-b border-slate-200/80">
+              <div>
+                <span id="preview-badge" class="text-xs font-bold px-2.5 py-1 rounded-full bg-brand-blueLight text-brand-blue">
+                  სადღესასწაულო & ბენტო ტორტი
+                </span>
+                <h3 id="preview-type-name" class="font-black text-brand-blue text-lg mt-1">
+                  ტორტი • ვანილის ბისკვიტი
+                </h3>
+              </div>
+              <div class="text-right">
+                <span class="text-xs text-slate-500 font-medium block">საერთო ღირებულება:</span>
+                <span id="preview-price-display" class="text-2xl font-black text-brand-blue leading-none">
+                  73 ₾
+                </span>
+              </div>
+            </div>
+
+            <!-- Sweet Visual Stage / Graphic Render -->
+            <div class="sweet-stage py-6 flex items-center justify-center">
+              <div id="sweet-visual-canvas" class="w-full flex items-center justify-center">
+                <!-- Dynamically rendered by app.js -->
+              </div>
+            </div>
+
+            <!-- Current Selection Badges -->
+            <div class="pt-4 border-t border-slate-200/80 space-y-2">
+              <div class="flex items-center justify-between text-xs text-slate-600">
+                <span class="font-medium">არჩეული შიგთავსი:</span>
+                <span id="preview-filling-name" class="font-bold text-brand-brown">ბელგიური შოკოლადის განაში</span>
+              </div>
+              <div class="flex items-center justify-between text-xs text-slate-600">
+                <span class="font-medium">სწრაფი მიწოდება:</span>
+                <span class="font-bold text-emerald-600 flex items-center gap-1">
+                  <span>●</span> 45-60 წუთში
+                </span>
+              </div>
+            </div>
+
+            <!-- Proceed to Checkout Button -->
+            <div class="mt-6 pt-4 border-t border-slate-200/80">
+              <button id="go-to-order-btn" type="button" class="w-full py-4 px-6 bg-gradient-to-r from-brand-blue to-brand-blueHover text-white font-black text-base rounded-2xl shadow-xl shadow-brand-blue/30 hover:shadow-brand-blue/50 hover:-translate-y-0.5 active:translate-y-0 transition-all flex items-center justify-center gap-2">
+                <span>გადასვლა შეკვეთის გაფორმებაზე</span>
+                <span>🚚</span>
+              </button>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- RIGHT: DESIGN CONTROLS & OPTIONS -->
+        <div class="lg:col-span-7 space-y-8">
+          
+          <!-- 1. COLOR / GLAZE SELECTOR -->
+          <div class="bg-white p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-sm space-y-4">
+            <div class="flex items-center justify-between">
+              <h4 class="text-lg font-black text-brand-blue flex items-center gap-2">
+                <span>🎨</span> ტკბილეულის მინანქრის / გარე ფერი:
+              </h4>
+              <span class="text-xs text-slate-500 font-medium">საფირმო პალიტრა</span>
+            </div>
+
+            <div class="flex flex-wrap gap-4 pt-2">
+              
+              <!-- Color: Royal Blue -->
+              <button type="button" data-color="blue" class="color-swatch-btn relative w-12 h-12 rounded-2xl shadow-md ring-4 ring-blue-500 scale-110 transition-all flex items-center justify-center group focus:outline-none" style="background: linear-gradient(135deg, #1E3A8A 0%, #0F2042 100%);" title="სამეფო ლურჯი">
+                <span class="text-white text-xs opacity-0 group-hover:opacity-100 transition-opacity">✓</span>
+              </button>
+
+              <!-- Color: White Cream -->
+              <button type="button" data-color="white" class="color-swatch-btn relative w-12 h-12 rounded-2xl shadow-md border-2 border-slate-200 transition-all flex items-center justify-center group focus:outline-none" style="background: linear-gradient(135deg, #FFFFFF 0%, #F1F5F9 100%);" title="ნაღების თეთრი">
+                <span class="text-slate-800 text-xs opacity-0 group-hover:opacity-100 transition-opacity">✓</span>
+              </button>
+
+              <!-- Color: Dark Chocolate -->
+              <button type="button" data-color="brown" class="color-swatch-btn relative w-12 h-12 rounded-2xl shadow-md transition-all flex items-center justify-center group focus:outline-none" style="background: linear-gradient(135deg, #4E342E 0%, #2A170F 100%);" title="მუქი შოკოლადისფერი">
+                <span class="text-white text-xs opacity-0 group-hover:opacity-100 transition-opacity">✓</span>
+              </button>
+
+              <!-- Color: Sky Blue -->
+              <button type="button" data-color="sky" class="color-swatch-btn relative w-12 h-12 rounded-2xl shadow-md transition-all flex items-center justify-center group focus:outline-none" style="background: linear-gradient(135deg, #BAE6FD 0%, #38BDF8 100%);" title="პასტელური ცისფერი">
+                <span class="text-slate-800 text-xs opacity-0 group-hover:opacity-100 transition-opacity">✓</span>
+              </button>
+
+              <!-- Color: Caramel -->
+              <button type="button" data-color="caramel" class="color-swatch-btn relative w-12 h-12 rounded-2xl shadow-md transition-all flex items-center justify-center group focus:outline-none" style="background: linear-gradient(135deg, #F59E0B 0%, #B45309 100%);" title="თაფლისფერი კარამელი">
+                <span class="text-white text-xs opacity-0 group-hover:opacity-100 transition-opacity">✓</span>
+              </button>
+
+            </div>
+          </div>
+
+          <!-- 2. TIERS / BATCH SIZE SELECTOR -->
+          <div id="tier-selector-container" class="bg-white p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-sm space-y-4">
+            <h4 id="tier-selector-label" class="text-lg font-black text-brand-blue flex items-center gap-2">
+              <span>🥞</span> იარუსების რაოდენობა:
+            </h4>
+
+            <div class="grid grid-cols-3 gap-3">
+              <button type="button" data-tier="1" class="tier-select-btn py-3 px-4 rounded-2xl font-bold text-sm bg-white text-slate-700 border border-slate-200 hover:border-brand-blue transition-all">
+                1 იარუსი
+              </button>
+              <button type="button" data-tier="2" class="tier-select-btn py-3 px-4 rounded-2xl font-bold text-sm bg-blue-600 text-white shadow-md transition-all">
+                2 იარუსი
+              </button>
+              <button type="button" data-tier="3" class="tier-select-btn py-3 px-4 rounded-2xl font-bold text-sm bg-white text-slate-700 border border-slate-200 hover:border-brand-blue transition-all">
+                3 იარუსი
+              </button>
+            </div>
+          </div>
+
+          <!-- 3. PORTION SIZE SELECTOR -->
+          <div class="bg-white p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-sm space-y-4">
+            <h4 class="text-lg font-black text-brand-blue flex items-center gap-2">
+              <span>👥</span> პორციები და მოცულობა:
+            </h4>
+
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+              <label class="cursor-pointer border-2 border-slate-200 rounded-2xl p-4 flex flex-col justify-between hover:border-brand-blue transition-all has-[:checked]:border-brand-blue has-[:checked]:bg-blue-50/50">
+                <div class="flex items-center justify-between mb-2">
+                  <span class="text-sm font-bold text-brand-blue">სტანდარტული</span>
+                  <input type="radio" name="sweet-size" value="small" checked class="text-brand-blue focus:ring-brand-blue">
+                </div>
+                <span class="text-xs text-slate-500">6-8 ნაჭერი</span>
+              </label>
+
+              <label class="cursor-pointer border-2 border-slate-200 rounded-2xl p-4 flex flex-col justify-between hover:border-brand-blue transition-all has-[:checked]:border-brand-blue has-[:checked]:bg-blue-50/50">
+                <div class="flex items-center justify-between mb-2">
+                  <span class="text-sm font-bold text-brand-blue">საშუალო</span>
+                  <input type="radio" name="sweet-size" value="medium" class="text-brand-blue focus:ring-brand-blue">
+                </div>
+                <span class="text-xs text-slate-500">10-14 ნაჭერი (+35%)</span>
+              </label>
+
+              <label class="cursor-pointer border-2 border-slate-200 rounded-2xl p-4 flex flex-col justify-between hover:border-brand-blue transition-all has-[:checked]:border-brand-blue has-[:checked]:bg-blue-50/50">
+                <div class="flex items-center justify-between mb-2">
+                  <span class="text-sm font-bold text-brand-blue">საზეიმო</span>
+                  <input type="radio" name="sweet-size" value="large" class="text-brand-blue focus:ring-brand-blue">
+                </div>
+                <span class="text-xs text-slate-500">16-22 ნაჭერი (+75%)</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- 4. TOPPINGS & LUXURY DECORATIONS -->
+          <div class="bg-white p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-sm space-y-4">
+            <h4 class="text-lg font-black text-brand-blue flex items-center gap-2">
+              <span>✨</span> ტოპინგები და დეკორაციები:
+            </h4>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
+              
+              <label class="flex items-center justify-between p-3.5 rounded-2xl border border-slate-200 hover:border-brand-blue cursor-pointer transition-all has-[:checked]:bg-blue-50/50 has-[:checked]:border-brand-blue">
+                <div class="flex items-center gap-3">
+                  <span class="text-2xl">🍓</span>
+                  <div>
+                    <span class="text-sm font-bold text-slate-800 block">ცოცხალი მარწყვი და ჟოლო</span>
+                    <span class="text-xs text-slate-500">ახალი კენკრის ასორტი</span>
+                  </div>
+                </div>
+                <div class="flex items-center gap-2">
+                  <span class="text-xs font-bold text-brand-brown">+10 ₾</span>
+                  <input type="checkbox" value="berries" checked class="topping-checkbox w-5 h-5 rounded text-brand-blue focus:ring-brand-blue">
+                </div>
+              </label>
+
+              <label class="flex items-center justify-between p-3.5 rounded-2xl border border-slate-200 hover:border-brand-blue cursor-pointer transition-all has-[:checked]:bg-blue-50/50 has-[:checked]:border-brand-blue">
+                <div class="flex items-center gap-3">
+                  <span class="text-2xl">🍫</span>
+                  <div>
+                    <span class="text-sm font-bold text-slate-800 block">შოკოლადის წვეთები & ფილები</span>
+                    <span class="text-xs text-slate-500">ბელგიური მუქი შოკოლადი</span>
+                  </div>
+                </div>
+                <div class="flex items-center gap-2">
+                  <span class="text-xs font-bold text-brand-brown">+7 ₾</span>
+                  <input type="checkbox" value="chocolate_drip" checked class="topping-checkbox w-5 h-5 rounded text-brand-blue focus:ring-brand-blue">
+                </div>
+              </label>
+
+              <label class="flex items-center justify-between p-3.5 rounded-2xl border border-slate-200 hover:border-brand-blue cursor-pointer transition-all has-[:checked]:bg-blue-50/50 has-[:checked]:border-brand-blue">
+                <div class="flex items-center gap-3">
+                  <span class="text-2xl">✨</span>
+                  <div>
+                    <span class="text-sm font-bold text-slate-800 block">საკვები 24k ოქროს ფურცლები</span>
+                    <span class="text-xs text-slate-500">საზეიმო ბზინვარება</span>
+                  </div>
+                </div>
+                <div class="flex items-center gap-2">
+                  <span class="text-xs font-bold text-brand-brown">+14 ₾</span>
+                  <input type="checkbox" value="gold_leaf" class="topping-checkbox w-5 h-5 rounded text-brand-blue focus:ring-brand-blue">
+                </div>
+              </label>
+
+              <label class="flex items-center justify-between p-3.5 rounded-2xl border border-slate-200 hover:border-brand-blue cursor-pointer transition-all has-[:checked]:bg-blue-50/50 has-[:checked]:border-brand-blue">
+                <div class="flex items-center gap-3">
+                  <span class="text-2xl">🧁</span>
+                  <div>
+                    <span class="text-sm font-bold text-slate-800 block">მინი ფრანგული მაკარონები</span>
+                    <span class="text-xs text-slate-500">3 ცალი სხვადასხვა გემოს</span>
+                  </div>
+                </div>
+                <div class="flex items-center gap-2">
+                  <span class="text-xs font-bold text-brand-brown">+12 ₾</span>
+                  <input type="checkbox" value="macarons" class="topping-checkbox w-5 h-5 rounded text-brand-blue focus:ring-brand-blue">
+                </div>
+              </label>
+
+              <label class="flex items-center justify-between p-3.5 rounded-2xl border border-slate-200 hover:border-brand-blue cursor-pointer transition-all has-[:checked]:bg-blue-50/50 has-[:checked]:border-brand-blue sm:col-span-2">
+                <div class="flex items-center gap-3">
+                  <span class="text-2xl">🌰</span>
+                  <div>
+                    <span class="text-sm font-bold text-slate-800 block">მოხალული ფისტა & თხილი</span>
+                    <span class="text-xs text-slate-500">ხრაშუნა პრალინე და თხილეული</span>
+                  </div>
+                </div>
+                <div class="flex items-center gap-2">
+                  <span class="text-xs font-bold text-brand-brown">+8 ₾</span>
+                  <input type="checkbox" value="hazelnut" class="topping-checkbox w-5 h-5 rounded text-brand-blue focus:ring-brand-blue">
+                </div>
+              </label>
+
+            </div>
+          </div>
+
+          <!-- 5. PERSONAL INSCRIPTION (წარწერა ტკბილეულზე) -->
+          <div class="bg-white p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-sm space-y-4">
+            <div class="flex items-center justify-between">
+              <h4 class="text-lg font-black text-brand-blue flex items-center gap-2">
+                <span>✍️</span> პირადი წარწერა ტკბილეულზე:
+              </h4>
+              <span class="text-xs text-emerald-600 font-bold bg-emerald-50 px-2.5 py-1 rounded-full">უფასოა</span>
+            </div>
+
+            <p class="text-xs text-slate-500">
+              შეიყვანეთ ტექსტი, რომელიც დაიწერება თქვენს მიერ აწყობილ ტკბილეულზე:
+            </p>
+
+            <div class="space-y-3">
+              <input id="custom-inscription-input" 
+                     type="text" 
+                     maxlength="35" 
+                     value="გილოცავ!" 
+                     placeholder="მაგ: გილოცავ ანა!, Happy Birthday, სიყვარულით..." 
+                     class="w-full px-4 py-3.5 rounded-2xl border-2 border-slate-200 focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/20 outline-none text-slate-800 font-bold text-base transition-all">
+
+              <!-- Quick Presets -->
+              <div class="flex flex-wrap gap-2 pt-1">
+                <button type="button" class="preset-text-pill text-xs font-semibold px-3 py-1.5 rounded-xl bg-slate-100 hover:bg-brand-blueLight hover:text-brand-blue transition-colors">
+                  გილოცავ!
+                </button>
+                <button type="button" class="preset-text-pill text-xs font-semibold px-3 py-1.5 rounded-xl bg-slate-100 hover:bg-brand-blueLight hover:text-brand-blue transition-colors">
+                  Happy Birthday 🎉
+                </button>
+                <button type="button" class="preset-text-pill text-xs font-semibold px-3 py-1.5 rounded-xl bg-slate-100 hover:bg-brand-blueLight hover:text-brand-blue transition-colors">
+                  სიყვარულით ❤️
+                </button>
+                <button type="button" class="preset-text-pill text-xs font-semibold px-3 py-1.5 rounded-xl bg-slate-100 hover:bg-brand-blueLight hover:text-brand-blue transition-colors">
+                  საუკეთესო დედას 🌸
+                </button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- 7. ORDER & DELIVERY SECTION (მისამართი და ტელეფონის ნომერი)                 -->
+  <!-- ========================================================================= -->
+  <section id="order-section" class="py-16 sm:py-24 bg-brand-cream border-t border-slate-200/80 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+        <span class="text-xs sm:text-sm font-extrabold uppercase tracking-widest text-brand-blue bg-white border border-brand-blue/20 px-4 py-1.5 rounded-full inline-block">
+          ეტაპი 4 • მიწოდება
+        </span>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-brand-blue">
+          შეკვეთა და მიწოდების მისამართი
+        </h2>
+        <div class="w-16 h-1 bg-gradient-to-r from-brand-blue to-brand-brown rounded-full mx-auto"></div>
+        <p class="mobile-readable-text text-base sm:text-lg text-slate-600 leading-relaxed pt-2">
+          მიუთითეთ თქვენი საკონტაქტო ტელეფონის ნომერი და მისამართი, სადაც ჩვენი კურიერი უსაფრთხოდ მოგართმევთ თქვენს მიერ აწყობილ ტკბილეულს.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+        
+        <!-- LEFT: CONFIGURED SWEET SUMMARY CARD -->
+        <div class="lg:col-span-5 space-y-6">
+          <div class="bg-white p-6 sm:p-8 rounded-3xl border-2 border-brand-blue/15 shadow-xl relative overflow-hidden">
+            <div class="flex items-center justify-between pb-4 border-b border-slate-100">
+              <h3 class="font-black text-brand-blue text-lg flex items-center gap-2">
+                <span>📦</span> თქვენი შეკვეთის შეჯამება:
+              </h3>
+              <span class="text-xs font-bold px-2.5 py-1 rounded-full bg-emerald-100 text-emerald-800">
+                მზადაა გასაგზავნად
+              </span>
+            </div>
+
+            <!-- Sweet breakdown list -->
+            <div class="py-5 space-y-3.5 text-sm text-slate-700">
+              <div class="flex items-center justify-between">
+                <span class="text-slate-500">ტკბილეულის ტიპი:</span>
+                <span id="summary-sweet-type" class="font-bold text-brand-blue">ტორტი (სტანდარტული)</span>
+              </div>
+              <div class="flex items-center justify-between">
+                <span class="text-slate-500">ბისკვიტის ძირი:</span>
+                <span id="summary-sweet-base" class="font-bold text-slate-800">ვანილის ბისკვიტი</span>
+              </div>
+              <div class="flex items-center justify-between">
+                <span class="text-slate-500">არჩეული შიგთავსი:</span>
+                <span id="summary-sweet-filling" class="font-bold text-brand-brown">შოკოლადის განაში</span>
+              </div>
+              <div class="flex items-center justify-between">
+                <span class="text-slate-500">დიზაინი & იარუსები:</span>
+                <span id="summary-sweet-design" class="font-bold text-slate-800">სამეფო ლურჯი • 2 იარუსი</span>
+              </div>
+              <div class="flex items-center justify-between">
+                <span class="text-slate-500">დეკორაციები:</span>
+                <span id="summary-sweet-toppings" class="font-bold text-slate-800 text-right max-w-[55%] truncate">ცოცხალი მარწყვი, შოკოლადის წვეთები</span>
+              </div>
+              <div class="flex items-center justify-between">
+                <span class="text-slate-500">წარწერა:</span>
+                <span id="summary-sweet-inscription" class="font-bold text-brand-blue italic">"გილოცავ!"</span>
+              </div>
+            </div>
+
+            <!-- Total Price Row -->
+            <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
+              <div>
+                <span class="block text-xs text-slate-400 font-semibold uppercase">სულ გადასახდელი</span>
+                <span class="text-xs text-emerald-600 font-bold">მიწოდება თბილისში უფასოა!</span>
+              </div>
+              <span id="summary-total-price" class="text-3xl font-black text-brand-blue">
+                73 ₾
+              </span>
+            </div>
+
+            <!-- Guarantee badge -->
+            <div class="mt-6 p-4 rounded-2xl bg-brand-cream border border-amber-200/60 flex items-center gap-3">
+              <span class="text-2xl">🛡️</span>
+              <p class="text-xs text-slate-600 leading-snug">
+                100% ხარისხის გარანტია: თუ შეკვეთა დაზიანდა ტრანსპორტირებისას, ჩვენ მას დაუყოვნებლივ ჩავანაცვლებთ.
+              </p>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- RIGHT: DELIVERY FORM (NAME, PHONE, ADDRESS, TIME, NOTES) -->
+        <div class="lg:col-span-7">
+          <form id="order-form" class="bg-white p-6 sm:p-10 rounded-3xl border border-slate-200 shadow-xl space-y-6">
+            
+            <div class="border-b border-slate-100 pb-4">
+              <h3 class="text-xl font-black text-brand-blue">მიუთითეთ მიმღების მონაცემები</h3>
+              <p class="text-xs text-slate-500 mt-1">შეავსეთ ქვემოთ მოცემული ველები შეკვეთის გასაგზავნად</p>
+            </div>
+
+            <!-- Full Name -->
+            <div>
+              <label for="order-name" class="block text-sm font-bold text-slate-700 mb-1.5">
+                სახელი და გვარი <span class="text-rose-500">*</span>
+              </label>
+              <input id="order-name" 
+                     type="text" 
+                     required 
+                     placeholder="მაგ: ანა ბერიძე" 
+                     class="w-full px-4 py-3.5 rounded-2xl border-2 border-slate-200 focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/20 outline-none text-slate-800 font-medium transition-all">
+            </div>
+
+            <!-- Phone Number & City Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              
+              <!-- Phone Number -->
+              <div>
+                <label for="order-phone" class="block text-sm font-bold text-slate-700 mb-1.5">
+                  ტელეფონის ნომერი <span class="text-rose-500">*</span>
+                </label>
+                <div class="relative">
+                  <span class="absolute inset-y-0 left-0 pl-4 flex items-center text-sm font-bold text-slate-500 pointer-events-none">
+                    +995
+                  </span>
+                  <input id="order-phone" 
+                         type="tel" 
+                         required 
+                         placeholder="599 12 34 56" 
+                         pattern="[0-9\s]{9,12}"
+                         class="w-full pl-16 pr-4 py-3.5 rounded-2xl border-2 border-slate-200 focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/20 outline-none text-slate-800 font-medium transition-all">
+                </div>
+              </div>
+
+              <!-- City Select -->
+              <div>
+                <label for="order-city" class="block text-sm font-bold text-slate-700 mb-1.5">
+                  ქალაქი <span class="text-rose-500">*</span>
+                </label>
+                <select id="order-city" class="w-full px-4 py-3.5 rounded-2xl border-2 border-slate-200 focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/20 outline-none text-slate-800 font-medium bg-white transition-all">
+                  <option value="თბილისი" selected>თბილისი (უფასო მიწოდება)</option>
+                  <option value="ბათუმი">ბათუმი</option>
+                  <option value="ქუთაისი">ქუთაისი</option>
+                  <option value="რუსთავი">რუსთავი</option>
+                  <option value="მცხეთა">მცხეთა</option>
+                </select>
+              </div>
+
+            </div>
+
+            <!-- Exact Street Address -->
+            <div>
+              <label for="order-address" class="block text-sm font-bold text-slate-700 mb-1.5">
+                ზუსტი მისამართი (ქუჩა, კორპუსი/ბინა, სადარბაზო) <span class="text-rose-500">*</span>
+              </label>
+              <input id="order-address" 
+                     type="text" 
+                     required 
+                     placeholder="მაგ: ჭავჭავაძის გამზ. 45, სადარბაზო 2, სართული 4, ბინა 18" 
+                     class="w-full px-4 py-3.5 rounded-2xl border-2 border-slate-200 focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/20 outline-none text-slate-800 font-medium transition-all">
+            </div>
+
+            <!-- Delivery Date & Time Slot Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label for="order-date" class="block text-sm font-bold text-slate-700 mb-1.5">
+                  მიწოდების სასურველი დრო
+                </label>
+                <select id="order-date" class="w-full px-4 py-3.5 rounded-2xl border-2 border-slate-200 focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/20 outline-none text-slate-800 font-medium bg-white transition-all">
+                  <option value="asap">უახლოეს 45-60 წუთში (დღეს)</option>
+                  <option value="today_evening">დღეს საღამოს (18:00 - 21:00)</option>
+                  <option value="tomorrow_morning">ხვალ დილით (10:00 - 13:00)</option>
+                  <option value="tomorrow_evening">ხვალ საღამოს (17:00 - 20:00)</option>
+                </select>
+              </div>
+
+              <div>
+                <label class="block text-sm font-bold text-slate-700 mb-1.5">
+                  გადახდის მეთოდი
+                </label>
+                <select class="w-full px-4 py-3.5 rounded-2xl border-2 border-slate-200 focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/20 outline-none text-slate-800 font-medium bg-white transition-all">
+                  <option value="card_courier" selected>💳 ბარათით კურიერთან</option>
+                  <option value="cash">💵 ნაღდი ანგარიშსწორება კურიერთან</option>
+                  <option value="bank_transfer">🏦 საბანკო გადარიცხვა</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Notes for Courier -->
+            <div>
+              <label for="order-notes" class="block text-sm font-bold text-slate-700 mb-1.5">
+                დამატებითი კომენტარი კურიერისთვის (სურვილისამებრ)
+              </label>
+              <textarea id="order-notes" 
+                        rows="2" 
+                        placeholder="მაგ: კოდი კარზე: 1423, სურპრიზია და არ დარეკოთ კარზე..." 
+                        class="w-full px-4 py-3 rounded-2xl border-2 border-slate-200 focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/20 outline-none text-slate-800 font-medium transition-all"></textarea>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="pt-2">
+              <button id="checkout-submit-btn" 
+                      type="submit" 
+                      class="w-full py-4 px-8 bg-gradient-to-r from-brand-blue via-brand-blueHover to-brand-brown text-white font-black text-lg rounded-2xl shadow-xl shadow-brand-blue/30 hover:shadow-brand-blue/50 hover:-translate-y-0.5 active:translate-y-0 transition-all text-center">
+                შეკვეთის დადასტურება და გაგზავნა
+              </button>
+              <p class="text-center text-xs text-slate-400 mt-3">
+                ღილაკზე დაჭერით თქვენი შეკვეთა დაუყოვნებლივ გადაეცემა ჩვენს კონდიტერებს.
+              </p>
+            </div>
+
+          </form>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- 8. ORDER SUCCESS MODAL                                                   -->
+  <!-- ========================================================================= -->
+  <div id="order-success-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-slate-900/70 backdrop-blur-sm" role="dialog">
+    <div class="bg-white max-w-lg w-full rounded-3xl p-6 sm:p-8 shadow-2xl border-2 border-brand-blue/10 transform animate-in fade-in zoom-in duration-300">
+      
+      <div class="text-center space-y-3">
+        <div class="w-20 h-20 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center text-4xl mx-auto shadow-inner">
+          🎉
+        </div>
+        
+        <span class="text-xs font-black uppercase tracking-wider text-emerald-700 bg-emerald-50 px-3 py-1 rounded-full inline-block">
+          შეკვეთა მიღებულია!
+        </span>
+
+        <h3 class="text-2xl sm:text-3xl font-black text-brand-blue">
+          გმადლობთ შეკვეთისთვის!
+        </h3>
+
+        <p class="text-sm text-slate-600 leading-relaxed">
+          თქვენი საავტორო ტკბილეული უკვე გადაეცა მარელიანის ოსტატ-კონდიტერებს გამოსაცხობად.
+        </p>
+      </div>
+
+      <!-- Receipt Box -->
+      <div class="my-6 p-5 rounded-2xl bg-brand-cream border border-slate-200 space-y-2.5 text-xs sm:text-sm">
+        <div class="flex items-center justify-between pb-2 border-b border-slate-200">
+          <span class="text-slate-500 font-medium">შეკვეთის კოდი:</span>
+          <span id="modal-order-code" class="font-black text-brand-blue">#MR-84920</span>
+        </div>
+        <div class="flex items-center justify-between">
+          <span class="text-slate-500 font-medium">მიმღები:</span>
+          <span id="modal-recipient-name" class="font-bold text-slate-800">ანა ბერიძე</span>
+        </div>
+        <div class="flex items-center justify-between">
+          <span class="text-slate-500 font-medium">ტელეფონი:</span>
+          <span id="modal-phone" class="font-bold text-slate-800">+995 599 12 34 56</span>
+        </div>
+        <div class="flex items-center justify-between">
+          <span class="text-slate-500 font-medium">მისამართი:</span>
+          <span id="modal-address" class="font-bold text-slate-800 text-right max-w-[60%] truncate">თბილისი, ჭავჭავაძის გამზ. 45</span>
+        </div>
+        <div class="flex items-center justify-between pt-2 border-t border-slate-200">
+          <span class="text-slate-500 font-medium">დეტალები:</span>
+          <span id="modal-sweet-summary" class="font-bold text-brand-brown text-right max-w-[65%] truncate">ტორტი • შოკოლადის განაში</span>
+        </div>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="space-y-2">
+        <button id="modal-close-btn" type="button" class="w-full py-3.5 bg-brand-blue hover:bg-brand-blueHover text-white font-bold rounded-xl shadow-lg transition-all text-center">
+          კარგი, გასაგებია
+        </button>
+        <a href="https://wa.me/995599001122" target="_blank" class="w-full py-3 bg-emerald-50 text-emerald-800 hover:bg-emerald-100 font-bold rounded-xl text-xs flex items-center justify-center gap-2 transition-all">
+          <span>💬 შეკვეთის დაზუსტება WhatsApp-ში</span>
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ========================================================================= -->
+  <!-- 9. FOOTER                                                                -->
+  <!-- ========================================================================= -->
+  <footer class="bg-brand-blue text-white pt-16 pb-12 border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-white/10">
+        
+        <!-- Col 1: Brand Info -->
+        <div class="space-y-4">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-400 to-amber-600 flex items-center justify-center text-xl">
+              🍰
+            </div>
+            <div>
+              <span class="text-xl font-black block">მარელიანი</span>
+              <span class="text-[10px] text-amber-200 font-bold uppercase tracking-wider">Mareli Sweets</span>
+            </div>
+          </div>
+          <p class="text-xs text-blue-100/80 leading-relaxed">
+            პრემიუმ ხარისხის ხელნაკეთი ტკბილეულის ონლაინ ატელიე. ააწყვე შენი დიზაინით და მიიღე უსწრაფესად.
+          </p>
+        </div>
+
+        <!-- Col 2: Navigation Links -->
+        <div class="space-y-3">
+          <h4 class="text-sm font-extrabold uppercase tracking-wider text-amber-300">ნავიგაცია</h4>
+          <ul class="space-y-2 text-xs text-blue-100">
+            <li><a href="#home" class="hover:text-white transition-colors">მთავარი გვერდი</a></li>
+            <li><a href="#about" class="hover:text-white transition-colors">ჩვენს შესახებ</a></li>
+            <li><a href="#sweet-types" class="hover:text-white transition-colors">შიგთავსის შერჩევა</a></li>
+            <li><a href="#customizer" class="hover:text-white transition-colors">ტკბილეულის დიზაინი</a></li>
+            <li><a href="#order-section" class="hover:text-white transition-colors">მისამართი და შეკვეთა</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Contacts -->
+        <div class="space-y-3">
+          <h4 class="text-sm font-extrabold uppercase tracking-wider text-amber-300">კონტაქტი</h4>
+          <ul class="space-y-2 text-xs text-blue-100">
+            <li class="flex items-center gap-2">
+              <span>📍</span> <span>თბილისი, ი. ჭავჭავაძის გამზ. 45</span>
+            </li>
+            <li class="flex items-center gap-2">
+              <span>📞</span> <span>+995 32 2 123 456 / +995 599 00 11 22</span>
+            </li>
+            <li class="flex items-center gap-2">
+              <span>✉️</span> <span>order@mareli-sweets.ge</span>
+            </li>
+            <li class="flex items-center gap-2">
+              <span>⏰</span> <span>ყოველდღე: 09:00 - 22:00</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Palette & Craft Info -->
+        <div class="space-y-3">
+          <h4 class="text-sm font-extrabold uppercase tracking-wider text-amber-300">პალიტრა & სტანდარტი</h4>
+          <p class="text-xs text-blue-100/80 leading-relaxed">
+            დამზადებულია ლურჯის, თეთრისა და ყავისფერი ფერების ჰარმონიული შერწყმით, უმაღლესი ხარისხის ბელგიური შოკოლადით.
+          </p>
+          <div class="flex items-center gap-2 pt-1">
+            <span class="w-6 h-6 rounded-full bg-brand-blue border border-white" title="სამეფო ლურჯი"></span>
+            <span class="w-6 h-6 rounded-full bg-white border border-slate-300" title="თეთრი"></span>
+            <span class="w-6 h-6 rounded-full bg-brand-brown border border-white" title="შოკოლადის ყავისფერი"></span>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="pt-8 text-center text-xs text-blue-200/60 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p>© 2026 მარელიანი (Mareli Confectionery). ყველა უფლება დაცულია.</p>
+        <p>პორტფოლიოს პროექტი • Responsive Burger Navigation</p>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- App Script -->
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
